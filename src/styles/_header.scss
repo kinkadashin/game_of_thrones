@@ -1,0 +1,91 @@
+@use 'variaveis';
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+
+    @media (max-width: 999px) {
+        padding: 30px 20px;
+        background-color: black;
+    }
+
+    &__logo {
+        color: variaveis.$corSecundaria;
+        font-weight: 700;
+        font-size: 2em;
+        text-decoration: none;
+    }
+
+    .mobile-menu {
+        cursor: pointer;
+        display: none;
+
+        @media (max-width: 999px) {
+            display: block;
+        }
+
+        div {
+            width: 32px;
+            height: 2px;
+            background-color: variaveis.$corSecundaria;
+            margin: 8px;
+        }
+    }
+
+    &__links   {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 999px) {
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 103px;
+            right: 0;
+            background: black;
+            height: 0;
+            z-index: 1000;
+            transition: .6s;
+            visibility: hidden;
+            overflow-y: hidden;
+        }
+        
+        &--active {
+            visibility: visible;
+            height:  calc(100vh - 103px);
+            overflow-y: auto;
+        }
+
+        &__link {
+            list-style: none;
+            margin-left: 20px;
+
+            @media (max-width: 999px) {
+                display: flex;
+                margin: 0;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 6px 15px;
+                color: variaveis.$corPrimaria;
+                border-radius: 2px;
+                transition: 0.5s;
+                &:hover {
+                    background: variaveis.$corGradient;
+                    color: rgb(253, 252, 252);
+                }
+            }
+        }
+    }
+}

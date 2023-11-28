@@ -1,0 +1,85 @@
+@use 'variaveis';
+
+.home {
+    padding: 186px 100px 200px;
+    background: url("../../dist/images/wallpaper.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    @media (max-width: 999px) {
+        padding: 186px 20px 200px;
+    }
+    .content {
+        width: 100%;
+        margin: 0 auto;
+
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & > img {
+            width: 500px;
+
+            @media (max-width: 650px) {
+                width: 100%;
+            }
+        }
+        .details {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: variaveis.$corPrimaria;
+            font-weight: 400;
+
+            @media (max-width: 999px) {
+                flex-direction: column;
+            }
+
+            span:last-child {
+                border: 1.5px solid rgb(182, 181, 181);
+                padding: 4px 5px 2px;
+                border-radius: 2px;
+            }
+        }
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            color: variaveis.$corPrimaria;
+            gap: 20px;
+            font-weight: 500;
+            font-size: 1.5em;
+            &__button {
+                padding: 14px 26px;
+                border-radius: 2px;
+                transition: 0.5s;
+                &--btn1 {
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    background: variaveis.$corSecundaria;
+                    img {
+                        width: 30px;
+                    }
+                    &:hover {
+                        opacity: 0.8;
+                        cursor: pointer;
+                    }
+                }
+                &--btn2 {
+                    color: white;
+                    background: #ffffff2e;
+                    &:hover {
+                        background: variaveis.$corPrimaria;
+                        color: variaveis.$corSecundaria;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

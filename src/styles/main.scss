@@ -1,0 +1,53 @@
+@use 'variaveis';
+@use 'information';
+@use 'home';
+@use 'header';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #02161c;
+}
+
+@mixin text($fontSize:  18px) {
+    color: #a9a9a9;
+    font-size: $fontSize;
+    line-height: $fontSize + 6px;
+}
+
+@mixin title($fontSize: 30px) {
+    font-size: $fontSize;
+    color: #ffff;
+}
+
+.text--big {
+    @include text;
+    font-weight: bold;
+}
+
+.text {
+    @include text;
+}
+
+.title--big {
+    @include title(1.5em);
+}
+
+.title {
+    @include title;
+    margin-bottom: 30px;
+}
+
+.title--small {
+    @include title(18px);
+}
+
+a {
+    text-decoration: none;
+}

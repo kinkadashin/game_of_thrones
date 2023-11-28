@@ -1,0 +1,143 @@
+@use 'variaveis';
+
+.information {
+    padding: 0 100px;
+    margin-top: -148px;
+
+    @media (max-width: 999px) {
+        padding: 50px 20px 0;
+        margin: 0;
+    }
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        .temp {
+            font-weight: 600;
+            margin-bottom: 20px;
+            @media (max-width: 1200px){
+                text-align: center;
+            }
+        }
+        .episodios {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+
+            @media (max-width: 1200px) {
+                gap: 50px;
+            }
+
+            img {
+                width: 22.5%;
+                transition: 0.5s;
+
+                @media (max-width: 1200px) {
+                    width: 45%;
+                }
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.05);
+                }
+            }
+        }
+        .about {
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            h2 {
+                margin-bottom: 20px;
+            }
+            p {
+                color: variaveis.$corTerceira;
+                font-size: 18px;
+                line-height: 24px;
+            }
+            &__overview {
+                width: 70%;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .genry {
+                width: 25%;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+
+                &__links {
+                    display: flex;
+                    flex-direction: column;
+                    a {
+                        color: variaveis.$corTerceira;
+                        font-size: 18px;
+                        line-height: 24px;
+                        text-decoration: none;
+                        margin-bottom: 10px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .casts {
+            h2 {
+                margin-bottom: 60px;
+            }
+            &__cast {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-wrap: wrap;
+                &__item {
+                    width: 25%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-bottom: 50px;
+
+                    @media (max-width: 1200px) {
+                        width: 50%;
+                        align-items: center;
+                    }
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                        align-items: center;
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: variaveis.$corPrimaria;
+                        border: none;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        display: block;
+                        &:last-child {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
